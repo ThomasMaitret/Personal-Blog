@@ -5,6 +5,8 @@ import userConfig from '../../../config';
 const Link = styled(GatsbyLink)`
   color: #3e465b;
   text-decoration: none;
+  font-size: 30px;
+  vertical-align: text-top;
 
   &:hover {
     color: ${userConfig.primaryColor};

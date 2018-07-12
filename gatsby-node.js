@@ -6,15 +6,18 @@ const createPaginatedPages = require('gatsby-paginate');
 const userConfig = require('./config');
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+  const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
+    const blogPost = path.resolve('./src/templates/blog-post.js');
     resolve(
       graphql(
         `
           {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+            allMarkdownRemark(
+              sort: { fields: [frontmatter___date], order: DESC }
+              limit: 1000
+            ) {
               edges {
                 node {
                   fields {
@@ -24,27 +27,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   frontmatter {
                     title
                     date(formatString: "MMMM D, YYYY")
-                    featuredImage {
-                      childImageSharp {
-                        sizes(maxWidth: 850) {
-                          base64
-                          aspectRatio
-                          src
-                          srcSet
-                          sizes
-                        }
-                      }
-                    }
                   }
                 }
               }
             }
           }
-        `
-      ).then(result => {
+        `,
+      ).then((result) => {
         if (result.errors) {
-          console.log(result.errors)
-          reject(result.errors)
+          reject(result.errors);
         }
 
         // Create blog posts pages.
@@ -56,8 +47,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
           createPaginatedPages({
             edges: result.data.allMarkdownRemark.edges,
-            createPage: createPage,
-            pageTemplate: "src/templates/index.js",
+            createPage,
+            pageTemplate: 'src/templates/index.js',
             pageLength: userConfig.postsPerPage,
           });
 
@@ -69,22 +60,22 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               previous,
               next,
             },
-          })
-        })
-      })
-    )
-  })
-}
+          });
+        });
+      }),
+    );
+  });
+};
 
 exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
+  const { createNodeField } = boundActionCreators;
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+  if (node.internal.type === 'MarkdownRemark') {
+    const value = createFilePath({ node, getNode });
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value,
-    })
+    });
   }
-}
+};

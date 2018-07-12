@@ -1,17 +1,20 @@
-import styled from 'styled-components';
-import userConfig from '../../../config';
+import styled from "styled-components";
+import userConfig from "../../../config";
 
 const Article = styled.article`
-  color: #65738c;
-  font-size: 15px;
-  
+  color: #555;
+  font-size: 16px;
+
   a {
     color: ${userConfig.primaryColor};
-    font-weight: 700;
+    background-color: rgba(187, 239, 253, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    color: #1a1a1a;
     text-decoration: none;
-    
+
     &:hover {
-      text-decoration: underline;
+      background-color: #bbeffd;
+      border-bottom-color: #1a1a1a;
     }
   }
 
@@ -75,7 +78,7 @@ const Article = styled.article`
     line-height: 1.7;
     margin: 15px 0;
     padding: 0 50px 0 100px;
-    
+
     p,
     ul,
     ol {

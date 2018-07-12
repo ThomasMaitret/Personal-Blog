@@ -1,9 +1,8 @@
-import { injectGlobal } from 'styled-components';
-import styledNormalize from 'styled-normalize';
- 
+import { injectGlobal } from "styled-components";
+import styledNormalize from "styled-normalize";
+
 injectGlobal`
   ${styledNormalize}
-  
   *,
   *:before,
   *:after {
@@ -18,8 +17,11 @@ injectGlobal`
   }
 
   body {
-    background: #f9fafc;
-    font-family: 'Open Sans', sans-serif; 
+    background: linear-gradient(270deg, #a2d6ff, #91ffc4);
+    background-size: 400% 400%;
+    animation: AnimationName 15s ease infinite;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+    Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.5;
     padding: 50px 0;
     -webkit-font-smoothing: antialiased;
@@ -33,7 +35,7 @@ injectGlobal`
   .gatsby-highlight {
     border-bottom: 1px solid #e0e6ed;
     border-top: 1px solid #e0e6ed;
-    margin: 15px -100px;
+    margin: 15px -50px;
     padding: 0;
 
     pre[class*="language-"] {
@@ -43,7 +45,7 @@ injectGlobal`
   }
 
   pre[class*="language-"] {
-    background: #f5f2f0;
+    background: #faf9ff;
   }
 
   @media only screen and (max-width: 870px) {
@@ -55,4 +57,10 @@ injectGlobal`
       }
     }
   }
+
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 `;

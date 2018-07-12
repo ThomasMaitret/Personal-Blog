@@ -1,15 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Card = styled.div`
   background: #fff;
-  border: 1px solid #e0e6ed;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-  margin-bottom: 30px;
-  padding: 75px 100px;
+  box-shadow: 5px 5px rgba(112, 137, 255, 0.25);
+  margin-bottom: 20px;
+  padding: 40px 50px;
 
   @media only screen and (max-width: 870px) {
-    border-left: none;
-    border-right: none;
     padding: 75px 15px;
   }
 `;

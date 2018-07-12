@@ -1,15 +1,13 @@
 module.exports = {
-  title: 'Dev Blog', // Required
-  author: 'Ryan Fitzgerald', // Required
-  tagline: 'Full-stack Web Developer',
-  primaryColor: '#3498db', // Required
-  showHeaderImage: true,
-  showShareButtons: true,
+  title: 'Blog', // Required
+  author: 'Thomas Maitret', // Required
+  tagline: 'Développeur Front-End',
+  primaryColor: '#4960fc', // Required
   postsPerPage: 5, // Required
   social: {
-    website: 'https://ryanfitzgerald.ca',
-    github: 'https://github.com/ryanfitzgerald',
-    twitter: 'https://twitter.com/ryanafitzgerald',
-    linkedin: 'https://ca.linkedin.com/in/ryanafitzgerald'
-  }
+    website: 'https://thomasmaitret.fr',
+    github: 'https://github.com/thomasmaitret',
+    twitter: 'https://twitter.com/ThomasMaitret',
+    linkedin: 'https://ca.linkedin.com/in/thomas-maitret',
+  },
 };

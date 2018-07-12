@@ -1,8 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.div`
-  margin-top: 15px;
-  text-align: center;
+  margin-top: 2rem;
 `;
 
 export default Wrapper;

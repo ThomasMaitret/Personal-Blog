@@ -1,20 +1,20 @@
-import styled from 'styled-components';
-import Link from 'gatsby-link';
+import styled from "styled-components";
+import Link from "gatsby-link";
 
 const Button = styled(Link)`
-  border: 1px solid #bfc8d2;
-  border-radius: 25px;
-  color: #3e465b;
-  display: inline-block;
+  border: 1px solid #4a6a97;
+  color: #4a6a97;
   font-size: 10px;
   font-weight: 700;
-  margin: 0 10px;
-  padding: 5px 15px;
+  padding: 10px 20px;
+  font-size: 2rem;
   text-decoration: none;
   text-transform: uppercase;
+  transition: 0.15s all ease-in-out;
 
   &:hover {
-    border-color: #000;
+    border-color: #21487e;
+    color: #21487e;
   }
 `;
 
